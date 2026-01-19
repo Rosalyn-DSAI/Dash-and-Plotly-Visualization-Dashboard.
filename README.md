@@ -47,6 +47,20 @@ The application is organized into multiple themes/tabs for easier interpretation
 
 ---
 
+## Dashboard Preview
+
+### Theme 1 – Yield & Biomass
+![Theme 1 Dashboard](images/dashboard-theme1.png)
+
+### Theme 2 – Wind Erosion
+![Theme 2 Dashboard](images/dashboard-theme2.png)
+
+### Theme 5 – Treatment Performance
+![Theme 5 Dashboard](images/dashboard-theme5.png)
+
+
+---
+
 ## How to Run the Dashboard Locally
 
 ### 1) Install Python packages
