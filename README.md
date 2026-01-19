@@ -84,3 +84,9 @@ Dash
 Plotly
 Pandas
 NumPy
+
+
+---
+
+## 👩🏽‍💻 Author
+**Rosalyn Ezeako**  
