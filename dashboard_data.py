@@ -1,15 +1,11 @@
 """Data loading, validation, and filtering for the AgriSight Dash application.
-
-Only the four CSV datasets displayed by the app are read at startup. The large
-wind-tower Excel workbook remains in the repository for the original notebooks.
 """
 from dataclasses import dataclass
 from pathlib import Path
 
 import pandas as pd
 
-BASE_DIR = Path(__file__).resolve().parent
-
+DATA_DIR = Path(__file__).resolve().parent / "data"
 
 @dataclass(frozen=True)
 class Datasets:
@@ -18,12 +14,11 @@ class Datasets:
     weather: pd.DataFrame
     cover_crop: pd.DataFrame
 
-
 def load_datasets() -> Datasets:
-    harvest = pd.read_csv(BASE_DIR / "h5_i2_2019-2022_hand_harvest.csv")
-    erosion = pd.read_csv(BASE_DIR / "Mass Flux values 2019_2022 updated.csv")
-    weather = pd.read_csv(BASE_DIR / "h5-i2_2016-2021_daily-weather.csv")
-    cover_crop = pd.read_csv(BASE_DIR / "I2_CC_AGB_2020-2022.csv")
+    harvest = pd.read_csv(DATA_DIR / "h5_i2_2019-2022_hand_harvest.csv")
+    erosion = pd.read_csv(DATA_DIR / "Mass Flux values 2019_2022 updated.csv")
+    weather = pd.read_csv(DATA_DIR / "h5-i2_2016-2021_daily-weather.csv")
+    cover_crop = pd.read_csv(DATA_DIR / "I2_CC_AGB_2020-2022.csv")
 
     for frame in (harvest, erosion, weather, cover_crop):
         frame.columns = frame.columns.str.strip()
